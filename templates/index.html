@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Enhancer</title>
+</head>
+<body>
+    <h1>Upload your Audio</h1>
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="audio/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if download_link %}
+    <h2>Download Processed Audio:</h2>
+    <!-- Corrected download link -->
+    <a href="/processed/{{ download_link }}" download>Download MP3</a>
+    {% endif %}
+</body>
+</html>
